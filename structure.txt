@@ -9,6 +9,9 @@
 ├── public
 │   ├── file.svg
 │   ├── globe.svg
+│   ├── image
+│   │   ├── keyedlogo.svg
+│   │   └── logos-keyed.png
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
@@ -19,27 +22,56 @@
 │   │   │   ├── forgot-password
 │   │   │   │   └── page.tsx
 │   │   │   ├── layout.tsx
-│   │   │   └── login
-│   │   │       └── page.tsx
+│   │   │   ├── login
+│   │   │   │   └── page.tsx
+│   │   │   └── me
+│   │   │       └── route.ts
 │   │   ├── (dashboard)
 │   │   │   ├── guardian
-│   │   │   ├── layout.tsx
 │   │   │   ├── leadership
 │   │   │   ├── schools
 │   │   │   │   └── page.tsx
 │   │   │   ├── student
+│   │   │   │   ├── assessments
+│   │   │   │   │   └── page.tsx
 │   │   │   │   ├── assignments
-│   │   │   │   ├── classes
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── attendance
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── classroom
+│   │   │   │   │   ├── [subjectId]
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── health-room
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── homework
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── houses
+│   │   │   │   │   └── page.tsx
 │   │   │   │   ├── layout.tsx
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── preferences
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── profile
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── report-cards
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── timetable
+│   │   │   │       └── page.tsx
 │   │   │   └── teacher
 │   │   │       └── page.tsx
+│   │   ├── api
+│   │   │   ├── login
+│   │   │   │   └── route.ts
+│   │   │   └── me
+│   │   │       └── route.ts
 │   │   ├── favicon.ico
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── components
 │   │   ├── dashboard
+│   │   │   ├── Header.tsx
 │   │   │   └── Sidebar.tsx
 │   │   ├── features
 │   │   │   ├── attendance
@@ -75,20 +107,25 @@
 │   ├── config
 │   │   └── app.ts
 │   ├── hooks
+│   │   ├── useAuth.ts
+│   │   └── useUser.ts
 │   ├── lib
 │   │   ├── api
 │   │   │   ├── client.ts
-│   │   │   └── query-keys.ts
+│   │   │   ├── query-keys.ts
+│   │   │   └── services
+│   │   │       └── auth.service.ts
 │   │   ├── utils
 │   │   │   └── cn.ts
 │   │   ├── utils.ts
 │   │   └── validations
 │   │       └── auth.schema.ts
-│   ├── middleware.ts
+│   ├── middleware==.ts
 │   ├── providers
 │   │   ├── auth-provider.tsx
 │   │   ├── index.tsx
-│   │   └── query-provider.tsx
+│   │   ├── query-provider.tsx
+│   │   └── theme-provider.tsx
 │   ├── stores
 │   │   ├── auth.store.ts
 │   │   └── ui.store.ts
@@ -98,4 +135,4 @@
 ├── structure.txt
 └── tsconfig.json
 
-39 directories, 60 files
+55 directories, 81 files

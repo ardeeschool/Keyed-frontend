@@ -30,12 +30,9 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="mb-auto">
           <div className="flex items-center space-x-3 mb-2">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-              <div className="w-6 h-6 bg-black rounded-full" />
-            </div>
+           
             <div>
-              <h1 className="text-2xl font-bold">KeyEd</h1>
-              <p className="text-xs text-gray-400 uppercase tracking-wide">An Ardee Venture</p>
+              <img src="/image/keyedlogo.svg" alt="" />
             </div>
           </div>
         </div>
@@ -51,15 +48,15 @@ export default function LoginPage() {
           {/* Colored Dots */}
           <div className="flex items-center space-x-4">
             <div className="w-3 h-3 rounded-full bg-indigo-500" />
-            <div className="w-px h-6 bg-gray-700" />
+            <div className="w-6 h-0.5 bg-gray-700" />
             <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <div className="w-px h-6 bg-gray-700" />
+            <div className="w-6 h-0.5 bg-gray-700" />
             <div className="w-3 h-3 rounded-full bg-green-500" />
-            <div className="w-px h-6 bg-gray-700" />
+            <div className="w-6 h-0.5 bg-gray-700" />
             <div className="w-3 h-3 rounded-full bg-red-500" />
-            <div className="w-px h-6 bg-gray-700" />
+            <div className="w-6 h-0.5 bg-gray-700" />
             <div className="w-3 h-3 rounded-full bg-gray-500" />
-            <div className="w-px h-6 bg-gray-700" />
+           <div className="w-6 h-0.5 bg-gray-700" />
             <div className="w-3 h-3 rounded-full bg-orange-500" />
           </div>
         </div>

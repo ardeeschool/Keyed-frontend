@@ -1,13 +1,42 @@
-// src/app/(dashboard)/student/profile/page.tsx
 'use client';
 
-import { Trophy, CheckCircle, Star, FileText, ChevronRight } from 'lucide-react';
+import { Trophy, CheckCircle, Star, FileText, ChevronRight, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useUser } from '@/hooks/useUser';
 
 export default function StudentProfilePage() {
+
+  const { user, isLoading, error } = useUser();
+ 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+      </div>
+    );
+  }
+ 
+  if (error || !user) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-red-500">Failed to load profile data</p>
+      </div>
+    );
+  }
+ 
+  // Get initials from name
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase();
+  };
+
+
   return (
     <div className="max-w-7xl mx-auto space-y-6">
       {/* Breadcrumb */}
@@ -23,17 +52,18 @@ export default function StudentProfilePage() {
               {/* Avatar */}
               <Avatar className="h-20 w-20 border-4 border-white dark:border-gray-800">
                 <AvatarFallback className="bg-indigo-600 text-white text-2xl font-bold">
-                  IV
+                   {getInitials(user.email || 'User')}
                 </AvatarFallback>
               </Avatar>
 
               {/* Student Info */}
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
-                  Ishaan Verma
+                 Ishan
                 </h1>
                 <p className="text-xs text-gray-600 dark:text-gray-400">
                   Year 11-A · Falcon House · Ardee School, New Delhi
+                  
                 </p>
               </div>
             </div>

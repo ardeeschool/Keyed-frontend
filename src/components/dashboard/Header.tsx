@@ -1,12 +1,15 @@
 // src/components/dashboard/Header.tsx
 'use client';
 
-import { Search, Bell } from 'lucide-react';
+import { Search, Bell, LogOut } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
 export default function Header() {
+  const { logout } = useAuth();
+
   return (
     <header className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 z-50">
       <div className="h-full flex items-center justify-between px-6">
@@ -49,6 +52,11 @@ export default function Header() {
               3
             </Badge>
           </button>
+
+        <button onClick={logout} className="flex items-center gap-2">
+              <LogOut size={20} />
+              Logout
+            </button>
 
           {/* Profile Avatar */}
           <Avatar className="h-9 w-9 border-2 border-indigo-500">
